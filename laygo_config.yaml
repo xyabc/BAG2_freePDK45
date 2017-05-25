@@ -1,0 +1,37 @@
+#default_laygo_config file
+metal_layers: #metal layers
+- [metal0, donotuse]
+- [metal1, drawing]
+- [metal2, drawing]
+- [metal3, drawing]
+- [metal4, drawing]
+- [metal5, drawing]
+- [metal6, drawing]
+- [metal7, drawing]
+- [metal8, drawing]
+- [metal9, drawing]
+via_layers: #via layers
+- [via0, donotuse]
+- [via1, drawing]
+- [via2, drawing]
+- [via3, drawing]
+- [via4, drawing]
+- [via5, drawing]
+- [via6, drawing]
+- [via7, drawing]
+- [via8, drawing]
+pin_layers: #pin layers
+- [text, drawing]
+- [metal1, pin]
+- [metal2, pin]
+- [metal3, pin]
+- [metal4, pin]
+- [metal5, pin]
+- [metal6, pin]
+- [metal7, pin]
+- [metal8, pin]
+- [metal9, pin]
+prboundary_layer: [prBoundary, drawing] #boundary layer
+tech_lib: freePDK45
+text_layer: [text, drawing]
+physical_resolution: 0.005
