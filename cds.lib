@@ -1,0 +1,13 @@
+DEFINE analogLib $CDSHOME/tools/dfII/etc/cdslib/artist/analogLib
+DEFINE US_8ths   $CDSHOME/tools/dfII/etc/cdslib/sheets/US_8ths
+DEFINE basic     $CDSHOME/tools/dfII/etc/cdslib/basic
+DEFINE cdsDefTechLib $CDSHOME/tools/dfII/etc/cdsDefTechLib
+DEFINE NCSU_TechLib_FreePDK45  $PDK_DIR/ncsu_basekit/lib/NCSU_TechLib_FreePDK45
+DEFINE NCSU_Devices_FreePDK45  $PDK_DIR/ncsu_basekit/lib/NCSU_Devices_FreePDK45
+
+DEFINE BAG_prim /tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/BAG_prim
+
+# primitive library
+DEFINE freePDK45_microtemplates_dense ./freePDK45_microtemplates_dense
+#Removed by ddDeleteObj: DEFINE laygo_working /tools/projects/jdhan/BAG/BAG2_freePDK45/laygo_working
+DEFINE laygo_working /tools/projects/jdhan/BAG/BAG2_freePDK45/laygo_working
