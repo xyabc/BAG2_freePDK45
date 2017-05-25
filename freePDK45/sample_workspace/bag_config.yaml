@@ -1,0 +1,116 @@
+# BAG socket configuration
+socket:
+  # the host running the database.  localhost if on the same machine.
+  host: "localhost"
+  # the port to communicate with.
+  port_file: "BAG_server_port.txt"
+  sim_port_file: "BAG_sim_server_port.txt"
+  # the log file for socket communication debugging
+  log_file: "BAG_socket.log"
+  # number of messages allowed in a pipeline
+  pipeline: 100
+
+# CAD database configuration
+# Right now only virtuoso is supported.
+database:
+  # the python class that handles database interaction.
+  class: "bag.interface.skill.SkillInterface"
+  # configurations for schematic import and generation
+  schematic:
+    # technology library to configure new libraries with
+    tech_lib: "NCSU_Devices_FreePDK45"
+    # symbol pin master
+    sympin: ["basic", "sympin", "symbolNN"]
+    # input pin master
+    ipin: ["basic", "ipin", "symbol"]
+    # output pin master
+    opin: ["basic", "opin", "symbol"]
+    # inout pin master
+    iopin: ["basic", "iopin", "symbolr"]
+    # simulators where termOrder CDF field should be filled
+    simulators: ["auLvs", "auCdl", "spectre", "hspiceD"]
+    # libraries to exclude for schematic import
+    exclude_libraries: ["analogLib", "basic", "NCSU_Devices_FreePDK45"]
+  # configurations for testbench creation
+  testbench:
+    # config view global libraries
+    config_libs: "NCSU_Devices_FreePDK45 analogLib basic"
+    # config view cellviews
+    config_views: "spectre calibre schematic veriloga"
+    # config view stop cellviews
+    config_stops: "spectre veriloga"
+    # default simulation environment name
+    default_env: "tt"
+    # simulation environment file
+    env_file: "/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/corners_setup.sdb"
+    # definition files to include
+    def_files: []
+  # configurations used to create a Checker object to run LVS/RCX
+  checker:
+    # the Checker class.
+    checker_cls: "bag.verification.calibre.Calibre"
+    # LVS run directory
+    lvs_run_dir: "./calibre_run/lvs_work"
+    # RCX run directory
+    rcx_run_dir: "./calibre_run/pex_work"
+    # LVS runset
+    lvs_runset: "/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/lvs_runset"
+    # RCX runset
+    rcx_runset: "/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/rcx_runset"
+  # calibreview generation setting
+  calibreview:
+    # the calibreview cell map file.
+    cell_map: "/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/calview.cellmap"
+    # calibreview view name.
+    view_name: "calibre"
+
+# Simulation configurations
+simulation:
+  # python class that talks with the simulator
+  class: "bag.interface.ocean.OceanInterface"
+  # the interactive prompt string
+  prompt: "ocean> "
+  # file to load at simulator startup.
+  init_file: ""
+  # testbench view name
+  view: "adexl"
+  # testbench setup state name
+  state: "ocean_default"
+  # when simulation goes long, a reminder message will be printed at this interval
+  update_timeout_ms: 120000
+  # parameters used by pexpect.spawn() to start the simulator process
+  # see documentation for pexpect.spawn().  You may add more parameters if you like.
+  kwargs:
+    # the command to start
+    command: "ocean"
+    # command line arguments in a python list
+    args: []
+    # time to wait (in seconds) for the prompt to appear
+    timeout: 120
+    # current working directory.  Null for same directory as virtuoso.
+    cwd: !!null
+    # environment variables.  Null for same environment as SkillOceanServer.
+    env: !!null
+    # pexpect option, must be False
+    echo: False
+  # Ocean job options.
+  job_options:
+    configuretimeout: "300"
+    distributionmethod: "Local"
+    lingertimeout: "300"
+    maxjobs: "5"
+    preemptivestart: "1"
+    reconfigureimmediately: "1"
+    runtimeout: "-1"
+    showerrorwhenretrying: "1"
+    starttimeout: "300"
+
+# technology specific configuration are stored in a separate file.
+# this field tells BAG where to look for it.
+tech_config_path: "/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/tech_config.yaml"
+
+# BAG design libraries definition file.
+lib_defs: "bag_libs.def"
+
+# place to put new design libraries
+new_lib_path: "BagModules"

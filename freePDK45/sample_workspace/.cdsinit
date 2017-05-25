@@ -1,0 +1,87 @@
+
+printf("STARTING CDSINIT\n")
+
+; load configuration skill scripts.
+let( (configFileList file path saveSkillPath)
+    configFileList = '(
+                    )
+    ; paths of the configuration files.  
+    path = strcat(
+              ".  ~  "
+              prependInstallPath("local ")
+             )
+    saveSkillPath=getSkillPath()
+    setSkillPath(path)
+
+    foreach(file configFileList 
+       if(isFile(file) then
+          loadi(file)
+         )
+    )
+    setSkillPath(saveSkillPath)
+)
+
+; load key bindings scripts
+let( (bindKeyFileList file path saveSkillPath)
+    bindKeyFileList = '(
+                   "leBindKeys.il" 
+                   "schBindKeys.il"
+                    )
+    ; paths of key binding scripts
+    path = strcat(
+              ".  ~  "
+              prependInstallPath("local ")
+              prependInstallPath("samples/local")
+             )
+    saveSkillPath=getSkillPath()
+    setSkillPath(path)
+
+    foreach(file bindKeyFileList
+       if(isFile(file ) then
+          loadi(file)
+         )
+    )
+    setSkillPath(saveSkillPath)
+)
+
+sstatus(writeProtect nil)
+
+let((skillPath)
+   skillPath= strcat(
+    ". ~ "                                          ; Current & home directory
+    prependInstallPath("samples/techfile ")         ; sample source technology files
+   )
+   setSkillPath(skillPath)
+)
+
+printf("END OF STANDARD CONFIG SETTINGS\n")
+
+
+; set default editor
+;editor = "/usr/bin/emacs-23.1"
+
+
+envLoadFile( "./.cdsenv" ) 
+
+envSetVal("asimenv.startup" "projectDir" 'string sprintf( nil "/tools/scratch/%s/simulation" getShellEnvVar( "USER" ) ) )
+
+
+; setup calibre/virtuoso interface
+load(strcat(getShellEnvVar("MGC_HOME") "/lib/calibre.skl"))
+mgc_rve_init_socket(9190)
+
+load(strcat(getShellEnvVar("BDA_ROOT") "/3rdParty/cdsinit-bda"))
+
+cdlOutKeys = list(nil
+	'incFILE                   "$TSMC65_DK/Calibre/lvs/source.added"
+)
+
+;have CDF term Order update whenever the symbol is updated
+envSetVal("auCore.misc" "updateCDFtermOrder" 'boolean t)
+
+envSetVal("ihdl" "maxNetNameLength" `int 16000)
+
+ddsOpenLibManager()
+
+printf("END OF CUSTOM CONFIG SETTINGS\n")
+

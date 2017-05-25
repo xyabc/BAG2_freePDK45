@@ -1,0 +1,15 @@
+# basic technology libraries.
+DEFINE cdsDefTechLib    $CDSHOME/tools/dfII/etc/cdsDefTechLib
+DEFINE basic            $CDSHOME/tools/dfII/etc/cdslib/basic
+DEFINE analogLib        $CDSHOME/tools/dfII/etc/cdslib/artist/analogLib
+DEFINE ahdlLib          $CDS_INST_DIR/tools/dfII/samples/artist/ahdlLib/
+DEFINE NCSU_TechLib_FreePDK45 $PDK_DIR/ncsu_basekit/lib/NCSU_TechLib_FreePDK45
+DEFINE NCSU_Devices_FreePDK45 $PDK_DIR/ncsu_basekit/lib/NCSU_Devices_FreePDK45
+
+# standard cell library
+# None
+
+DEFINE BAG_prim /tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/BAG_prim
+
+DEFINE serdes_templates /tools/designs/eeis/BAG_2.0/BAG_framework/sample_templates/serdes_templates
+DEFINE serdes_testbenches /tools/designs/eeis/BAG_2.0/BAG_framework/sample_testbenches/serdes_testbenches

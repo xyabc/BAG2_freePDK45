@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<setupdb version="5">corners_setup
+	<active>Active Setup
+		<tests>
+			<test enabled="1">serdes_testbenches:gm_tb_tran:1
+				<tool>ADE</tool>
+			</test>
+		</tests>
+		<corners>
+			<corner enabled="0">_default</corner>
+			<corner enabled="1">tt
+				<vars>
+					<var>temperature
+						<value>25</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="1">hspice_nom.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ff.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ff.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ss.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ss.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">ff
+				<vars>
+					<var>temperature
+						<value>25</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">hspice_nom.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="1">hspice_ff.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ff.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ss.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ss.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">ff_hot
+				<vars>
+					<var>temperature
+						<value>65</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">hspice_nom.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="1">hspice_ff.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ff.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ss.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ss.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">ss
+				<vars>
+					<var>temperature
+						<value>25</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">hspice_nom.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ff.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ff.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="1">hspice_ss.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ss.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">ss_hot
+				<vars>
+					<var>temperature
+						<value>65</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="0">hspice_nom.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ff.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ff.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="1">hspice_ss.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ss.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">fs
+				<vars>
+					<var>temperature
+						<value>25</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="1">hspice_nom.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ff.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ff.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ss.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ss.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+				</models>
+			</corner>
+			<corner enabled="0">sf
+				<vars>
+					<var>temperature
+						<value>25</value>
+					</var>
+				</vars>
+				<models>
+					<model enabled="1">hspice_nom.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ff.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ff.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+					<model enabled="0">hspice_ss.include
+						<modelfile>/tools/designs/eeis/BAG_2.0/pdk_files/freePDK45/PDK/FreePDK45/ncsu_basekit/models/hspice/hspice_ss.include</modelfile>
+						<modelsection></modelsection>
+						<modeltest>All</modeltest>
+						<modelblock>Global</modelblock>
+					</model>
+				</models>
+			</corner>
+		</corners>
+	</active>
+	<history>History</history>
+</setupdb>

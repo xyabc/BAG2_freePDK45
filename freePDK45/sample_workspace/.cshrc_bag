@@ -1,0 +1,6 @@
+#! /usr/local/bin/tcsh -f
+
+setenv BAG_WORK_DIR `pwd`
+setenv BAG_TEMP_DIR `pwd`/BAGTMP
+setenv BAG_CONFIG_PATH "${BAG_WORK_DIR}/bag_config.yaml"
+
