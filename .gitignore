@@ -6,8 +6,8 @@ tsmc16
 .idea
 *.pyc
 *.layermap
-*.gds
-*.yaml
+#*.gds
+#*.yaml
 *~
 *.attr
 
