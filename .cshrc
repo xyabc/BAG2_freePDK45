@@ -1,61 +1,31 @@
 #! /usr/local/bin/tcsh -f
 
-#  Licensing
+# Licensing
 source /tools/commercial/flexlm/flexlm.cshrc
 
-# Cadence Settings
+# Cadence settings
 setenv SPECTRE_DEFAULTS -E
 setenv CDS_Netlisting_Mode "Analog"
+setenv CDS_AUTO_64BIT ALL
 
-# Setup Additional Tools
+# Setup tool pathes - put the right path of your tool installations
 setenv MMSIM_HOME   /tools/cadence/MMSIM/MMSIM121
 setenv CDS_INST_DIR /tools/cadence/IC/IC615_514
-#setenv CDS_INST_DIR /tools/cadence/IC/IC616_500_10
-setenv ASSURAHOME   /tools/cadence/ASSURA/AASSURA_613_41_lnx86
-setenv IUSHOME      /tools/cadence/IUS/IUS82_USR5_lnx
-setenv ICCHOME      /tools/synopsys/icc/current
-setenv SYNOPSYS     /tools/synopsys/syn/current
-setenv MGC_HOME     /tools/mentor/calibre/ixl_cal_2012.2_36.25
-setenv HSPICE_HOME  /tools/synopsys/hspice/D-2010.03-SP1/hspice
-setenv SXHOME       /tools/synopsys/sx/C-2009.03-SP1/C2009.03-SP1/sx_C2009_03-SP1
-setenv ASTROHOME    /tools/synopsys/astro/Z-2007.03-SP4/bin/IA.32
-setenv BDA_ROOT     /tools/commercial/bda/bda_root
-setenv PEAKHOME     /tools/commercial/lorentz/peakview/current
-setenv EMXHOME      /tools/commercial/integrand/2011
-setenv MODEL_TECH   /tools/mentor/modelsim/modelsim10.2a/modeltech/
-
+setenv CDSHOME $CDS_INST_DIR
 set path = ( $path \
     ${MMSIM_HOME}/tools/bin \
     ${CDS_INST_DIR}/tools/bin \
     ${CDS_INST_DIR}/tools/dfII/bin \
     ${CDS_INST_DIR}/tools/plot/bin \
-    ${ASSURAHOME}/tools/assura/bin \
-    ${IUSHOME}/tools/bin \
-    ${ICCHOME}/bin \
-    ${SYNOPSYS}/bin \
-    ${MGC_HOME}/bin \
-    ${HSPICE_HOME}/bin \
-    ${SXHOME}/bin \
-    ${ASTROHOME} \
-    ${BDA_ROOT}/bin \
-    ${PEAKHOME}/bin \
-    ${EMXHOME} \
-    ${MODEL_TECH}/bin \
     )
 
-setenv PTS_HOME /tools/synopsys/pt/D-2009.12-SP3
-setenv AMSHOME $IUSHOME
-setenv CDSHOME $CDS_INST_DIR
-setenv CDS_AUTO_64BIT ALL
+# Setup PDK - put the path of your freePDK4 installed 
+source /tools/projects/eeis/BAG_2.0/pdk_files/freePDK45/NCSU-FreePDK45-1.4/FreePDK45/ncsu_basekit/cdssetup/setup.csh
 
-### Setup PDK
-#source /tools/projects/eeis/BAG_2.0/pdk_files/freePDK45/NCSU-FreePDK45-1.4/FreePDK45/ncsu_basekit/cdssetup/setup.csh
-source ./PDK/FreePDK45/ncsu_basekit/cdssetup/setup.csh
-
-### Setup BAG
+# Setup BAG
 source .cshrc_bag
 
-### Setup pycells 
+# Setup pycells 
 ### PYTHON STUFF FOR IPDK (NEEDS TO BE AFTER sourcing BAG)
 #setenv OA_BIT 64
 setenv OA_COMPILER		gcc44x
