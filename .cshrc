@@ -10,7 +10,7 @@ setenv CDS_AUTO_64BIT ALL
 
 # Setup tool pathes - put the right path of your tool installations
 setenv MMSIM_HOME   /tools/cadence/MMSIM/MMSIM121
-setenv CDS_INST_DIR /tools/cadence/IC/IC615_514
+setenv CDS_INST_DIR /tools/cadence/IC/IC616_500_10
 setenv CDSHOME $CDS_INST_DIR
 set path = ( $path \
     ${MMSIM_HOME}/tools/bin \
