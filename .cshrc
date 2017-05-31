@@ -10,7 +10,8 @@ setenv CDS_AUTO_64BIT ALL
 
 # Setup tool pathes - put the right path of your tool installations
 setenv MMSIM_HOME   /tools/cadence/MMSIM/MMSIM121
-setenv CDS_INST_DIR /tools/cadence/IC/IC616_500_10
+setenv CDS_INST_DIR /tools/cadence/IC/IC615_514
+#setenv CDS_INST_DIR /tools/cadence/IC/IC616_500_10
 setenv CDSHOME $CDS_INST_DIR
 set path = ( $path \
     ${MMSIM_HOME}/tools/bin \
@@ -52,5 +53,10 @@ else
   setenv LD_LIBRARY_PATH ${LDLIB_DEFAULT}
 endif
 
+# add open access
 setenv OA_HOME /tools/cadence/IC/IC615_514/oa_v22.41.027
+#setenv OA_HOME /tools/cadence/IC/IC616_500_10/oa_v22.43.042/
+#setenv OAHOME /tools/cadence/IC/IC616_500_10/oa_v22.43.042/
+#setenv OAHOME          /tools/projects/eeis/BAG_2.0/oa_dist
+#setenv LD_LIBRARY_PATH "${OAHOME}/lib/linux_rhel50_gcc44x_64/opt:${LD_LIBRARY_PATH}"
 
